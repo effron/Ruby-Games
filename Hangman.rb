@@ -128,7 +128,6 @@ class ComputerPlayer
     return_array = letter_hash.sort_by { |key, value| value }
     p return_array
     return_array
-
   end
 
   def pick_letter
@@ -136,7 +135,6 @@ class ComputerPlayer
     letter_picked = char_frequency.last[0]
     @guessed_letters << letter_picked
     letter_picked
-
   end
 
   def prune_dict!(game_status_regex)
@@ -148,6 +146,7 @@ class ComputerPlayer
     p correct_guesses
     wrong_guesses = @guessed_letters - correct_guesses
     p wrong_guesses
+
     unless wrong_guesses.empty?
       wrong_guesses.unshift("[")
       wrong_guesses.push("]")
@@ -157,7 +156,6 @@ class ComputerPlayer
         word.match(/#{wg_string}/)
       end
     end
-
   end
 
   def parse_game_status(game_status)
@@ -183,7 +181,6 @@ class ComputerPlayer
     end
     dict_hash
   end
-
 end
 
 
